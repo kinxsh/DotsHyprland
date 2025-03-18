@@ -29,11 +29,14 @@ if [ "$1" == "--noswitch" ]; then
 	# imgpath=$(agsv1 run-js 'wallpaper.get(0)')
 elif [[ "$1" ]]; then
 	switch "$1"
+elif [ "$1" == "--waypaper" ]; then
+    cd "$(xdg-user-dir PICTURES)/Wallpapers" || cd "$(xdg-user-dir PICTURES)" || return 1
+	switch "$($2)"
 else
 	# Select and set image (hyprland)
 
     cd "$(xdg-user-dir PICTURES)/Wallpapers" || cd "$(xdg-user-dir PICTURES)" || return 1
-	switch "$($1)"
+	switch "$(yad --width 1200 --height 800 --file --add-preview --large-preview --title='Choose wallpaper')"
 fi
 
 # Generate colors for ags n stuff
