@@ -1,10 +1,12 @@
+git checkout -f
+chmod +x ./cleanpatcher.sh
 yay -S waypaper --noconfirm --needed
-curl https://raw.githubusercontent.com/kinxsh/DotsHyprland/refs/heads/main/config.ini -o ./config.ini.new
-rm -rf ~/.config/waypaper
-mkdir ~/.config/waypaper
-sudo mv ./config.ini.new ~/.config/waypaper/config.ini
-echo windowrule=float,waypaper > ~/.config/hypr/custom/rules.conf.new
-mv ~/.config/hypr/custom/rules.conf.new ~/.config/hypr/custom/rules.conf
-echo bind = Super, grave, exec, waypaper > ~/.config/hypr/custom/keybinds.conf.new
-mv ~/.config/hypr/custom/keybinds.conf.new ~/.config/hypr/custom/keybinds.conf
-
+mkdir ~/.config/waypaper -p
+cp ./config.ini ~/.config/waypaper/config.ini.old
+mv ~/.config/waypaper/config.ini.old ~/.config/waypaper/config.ini $1
+echo windowrule=float,waypaper > ~/.config/hypr/custom/rules.conf.old
+mv ~/.config/hypr/custom/rules.conf.old ~/.config/hypr/custom/rules.conf $1
+echo bind = Super, grave, exec, waypaper > ~/.config/hypr/custom/keybinds.conf.old
+mv ~/.config/hypr/custom/keybinds.conf.old ~/.config/hypr/custom/keybinds.conf $1
+cp ./user_options.js ~/.config/ags/user_options.js.old
+mv ~/.config/ags/user_options.js.old ~/.config/ags/user_options.js $1
