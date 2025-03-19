@@ -1,5 +1,3 @@
-git checkout -f
-chmod +x ./cleanpatcher.sh
 yay -S waypaper --noconfirm --needed
 mkdir ~/.config/waypaper -p
 cp ./config.ini ~/.config/waypaper/config.ini.old
