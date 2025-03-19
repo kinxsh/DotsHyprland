@@ -1,3 +1,3 @@
-git checkout --force
+git pull --force
 chmod +x ./script.sh
 ./script.sh
