@@ -8,4 +8,5 @@ echo bind = Super, grave, exec, waypaper > ~/.config/hypr/custom/keybinds.conf.o
 mv ~/.config/hypr/custom/keybinds.conf.old ~/.config/hypr/custom/keybinds.conf $1
 cp ./user_options.js ~/.config/ags/user_options.js.old
 mv ~/.config/ags/user_options.js.old ~/.config/ags/user_options.js $1
+cp ./booru.js #UGH
 agsv1 --quit
